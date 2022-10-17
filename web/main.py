@@ -42,7 +42,7 @@ dbg('sql part')
 import sqlite3
 dbg('import sqlite3 success')
 
-conn = sqlite3.connect('db.sqlite3')
+conn = sqlite3.connect('db.sqlite3' if debug_mode else 'dba.sqlite3')
 cur = conn.cursor()
 dbg('created connection and cursor')
 
