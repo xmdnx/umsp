@@ -1,12 +1,11 @@
 # НУЖНО ЗАПУСТИТЬ ЭТОТ ФАЙЛ
 
 from tkinter import filedialog
-import eyed3
+import eyed3, os, socket
 from os import listdir
-import os
 from os.path import isfile, join
 
-debug_mode = True
+debug_mode = False
 
 def dbg(text):
 	if debug_mode:
@@ -73,7 +72,10 @@ dbg('cycle success!')
 conn.close()
 dbg('connection closed!')
 
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+
 os.system("python manage.py migrate")
 dbg('migrated!')
 dbg('runserver...')
-os.system('python manage.py runserver')
+os.system('python manage.py runserver ' + local_ip + ':8000')
