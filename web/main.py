@@ -5,6 +5,7 @@ import eyed3, os, socket
 from os import listdir
 from os.path import isfile, join
 
+lan_mode = False
 debug_mode = False
 
 def dbg(text):
@@ -78,4 +79,4 @@ local_ip = socket.gethostbyname(hostname)
 os.system("python manage.py migrate")
 dbg('migrated!')
 dbg('runserver...')
-os.system('python manage.py runserver ' + local_ip + ':8000')
+os.system(('python manage.py runserver ' + local_ip + ':8000') if lan_mode else "python manage.py runserver")

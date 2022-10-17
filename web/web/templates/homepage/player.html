@@ -6,7 +6,10 @@
 
 {% block content %}
 	{% if track %}
-		{{track.title}}
+		{{track.title}}<br>
+		{{track.author}}<br>
+		<audio controls src="{{track.file}}"></audio><br>
+		{{track.duration}} секунд<br>
 	{% else %}
 		ничего
 	{% endif %}
