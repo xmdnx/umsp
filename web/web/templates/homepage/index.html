@@ -1,3 +1,17 @@
 {% extends 'base.html' %}
+
 {% block title %}UMSP/Главная{% endblock %}
-{% block content %}<h1>bebra</h1>{% endblock %}
+
+{% block content %}
+
+  {% if tracks %}
+  
+    {% for a in tracks %}
+      <a href="https://google.com/">{{a.title}}</a>
+    {% endfor %}
+  
+  {% else %}
+  
+  {% endif %}
+
+{% endblock %}
