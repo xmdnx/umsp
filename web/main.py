@@ -6,7 +6,7 @@ from os import listdir
 import os
 from os.path import isfile, join
 
-debug_mode = True
+debug_mode = False
 
 def dbg(text):
 	if debug_mode:
