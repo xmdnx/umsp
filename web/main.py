@@ -6,7 +6,7 @@ from os import listdir
 import os
 from os.path import isfile, join
 
-debug_mode = False
+debug_mode = True
 
 def dbg(text):
 	if debug_mode:
@@ -42,7 +42,7 @@ dbg('sql part')
 import sqlite3
 dbg('import sqlite3 success')
 
-conn = sqlite3.connect('db.sqlite3' if debug_mode else 'dba.sqlite3')
+conn = sqlite3.connect('dba.sqlite3' if debug_mode else 'db.sqlite3')
 cur = conn.cursor()
 dbg('created connection and cursor')
 
@@ -73,5 +73,7 @@ dbg('cycle success!')
 conn.close()
 dbg('connection closed!')
 
+os.system("python manage.py migrate")
+dbg('migrated!')
 dbg('runserver...')
 os.system('python manage.py runserver')
