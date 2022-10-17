@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{track.title}}{% endblock %}
+
+{% block content %}
+	{% if track %}
+		{{track.title}}
+	{% else %}
+		ничего
+	{% endif %}
+{% endblock %}

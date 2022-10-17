@@ -5,7 +5,7 @@
 {% block content %}
 	{% if tracks_list %}
 		{% for a in tracks_list %}
-			<a href="https://google.com/">{{a.title}}</a>
+			<a href="{% url 'homepage:player' a.id %}">{{a.title}}<br></a>
 		{% endfor %}
 	{% else %}
 		ничего
