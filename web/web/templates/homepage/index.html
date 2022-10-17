@@ -3,15 +3,11 @@
 {% block title %}UMSP/Главная{% endblock %}
 
 {% block content %}
-
-  {% if tracks %}
-  
-    {% for a in tracks %}
-      <a href="https://google.com/">{{a.title}}</a>
-    {% endfor %}
-  
-  {% else %}
-  
-  {% endif %}
-
+	{% if tracks_list %}
+		{% for a in tracks_list %}
+			<a href="https://google.com/">{{a.title}}</a>
+		{% endfor %}
+	{% else %}
+		ничего
+	{% endif %}
 {% endblock %}

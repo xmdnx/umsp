@@ -4,4 +4,4 @@ from .models import Track
 
 def index(request):
     tracks_list = Track.objects.all()
-    return render(request, 'homepage/index.html', {'tracks': tracks_list})
+    return render(request, 'homepage/index.html', {'tracks_list': tracks_list})
