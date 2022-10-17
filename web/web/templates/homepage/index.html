@@ -2,10 +2,12 @@
 
 {% block title %}UMSP/Главная{% endblock %}
 
+{% block h1title %}Главная{% endblock %}
+
 {% block content %}
 	{% if tracks_list %}
 		{% for a in tracks_list %}
-			<a href="{% url 'homepage:player' a.id %}">{{a.title}}<br></a>
+			<a class="track_name" href="{% url 'homepage:player' a.id %}">{{a.title}}<br></a>
 		{% endfor %}
 	{% else %}
 		ничего

@@ -1,11 +1,150 @@
 <!DOCTYPE html>
 <HTML>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}UMSP{% endblock %}</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        {% block content %}EMPTY BLOCK{% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}UMSP{% endblock %}</title>
+		<style>
+			@font-face {
+				font-family: "Google Sans Regular";
+				src: url("fonts/GoogleSans-Regular.ttf");
+			}
+
+			@font-face {
+				font-family: "Google Sans Medium";
+				src: url("fonts/GoogleSans-Medium.ttf");
+				}
+
+			@font-face {
+				font-family: "Google Sans Bold";
+				src: url("fonts/GoogleSans-Bold.ttf");
+			}
+			body {
+				margin:none;
+				padding:none;
+
+				--md-sys-color-primary: #ffb86d;
+				--md-sys-color-on-primary: #492900;
+				--md-sys-color-primary-container: #693c00;
+				--md-sys-color-on-primary-container: #ffdcbd;
+				--md-sys-color-secondary: #e7bf9a;
+				--md-sys-color-on-secondary: #432b11;
+				--md-sys-color-secondary-container: #5c4125;
+				--md-sys-color-on-secondary-container: #ffdcbd;
+				--md-sys-color-tertiary: #bcce8f;
+				--md-sys-color-on-tertiary: #283506;
+				--md-sys-color-tertiary-container: #3e4c1b;
+				--md-sys-color-on-tertiary-container: #d8eaa9;
+				--md-sys-color-error: #ffb4ab;
+				--md-sys-color-on-error: #690005;
+				--md-sys-color-error-container: #93000a;
+				--md-sys-color-on-error-container: #ffb4ab;
+				--md-sys-color-background: #201b16;
+				--md-sys-color-on-background: #ebe0d9;
+				--md-sys-color-surface: #201b16;
+				--md-sys-color-on-surface: #ebe0d9;
+				--md-sys-color-surface-variant: #50453a;
+				--md-sys-color-on-surface-variant: #d5c3b5;
+				--md-sys-color-outline: #9d8e81;
+				--md-sys-color-outline-variant: #50453a;
+				--md-sys-color-shadow: #000000;
+				--md-sys-color-scrim: #000000;
+				--md-sys-color-inverse-surface: #ebe0d9;
+				--md-sys-color-inverse-on-surface: #352f2b;
+				--md-sys-color-inverse-primary: #8a5100;
+				--md-sys-color-surface-tint: #ffb86d;
+				--md-sys-color-surface-tint-color: #ffb86d;
+				--md-sys-color-primary-light: #8a5100;
+				--md-sys-color-on-primary-light: #ffffff;
+				--md-sys-color-primary-container-light: #ffdcbd;
+				--md-sys-color-on-primary-container-light: #2c1600;
+				--md-sys-color-secondary-light: #76593a;
+				--md-sys-color-on-secondary-light: #ffffff;
+				--md-sys-color-secondary-container-light: #ffdcbd;
+				--md-sys-color-on-secondary-container-light: #2b1701;
+				--md-sys-color-tertiary-light: #556430;
+				--md-sys-color-on-tertiary-light: #ffffff;
+				--md-sys-color-tertiary-container-light: #d8eaa9;
+				--md-sys-color-on-tertiary-container-light: #151f00;
+				--md-sys-color-error-light: #ba1a1a;
+				--md-sys-color-on-error-light: #ffffff;
+				--md-sys-color-error-container-light: #ffdad6;
+				--md-sys-color-on-error-container-light: #410002;
+				--md-sys-color-background-light: #fffbff;
+				--md-sys-color-on-background-light: #201b16;
+				--md-sys-color-surface-light: #fffbff;
+				--md-sys-color-on-surface-light: #201b16;
+				--md-sys-color-surface-variant-light: #f2dfd0;
+				--md-sys-color-on-surface-variant-light: #50453a;
+				--md-sys-color-outline-light: #837568;
+				--md-sys-color-outline-variant-light: #d5c3b5;
+				--md-sys-color-shadow-light: #000000;
+				--md-sys-color-scrim-light: #000000;
+				--md-sys-color-inverse-surface-light: #352f2b;
+				--md-sys-color-inverse-on-surface-light: #faefe7;
+				--md-sys-color-inverse-primary-light: #ffb86d;
+				--md-sys-color-surface-tint-light: #8a5100;
+				--md-sys-color-surface-tint-color-light: #8a5100;
+				--md-sys-color-primary-dark: #ffb86d;
+				--md-sys-color-on-primary-dark: #492900;
+				--md-sys-color-primary-container-dark: #693c00;
+				--md-sys-color-on-primary-container-dark: #ffdcbd;
+				--md-sys-color-secondary-dark: #e7bf9a;
+				--md-sys-color-on-secondary-dark: #432b11;
+				--md-sys-color-secondary-container-dark: #5c4125;
+				--md-sys-color-on-secondary-container-dark: #ffdcbd;
+				--md-sys-color-tertiary-dark: #bcce8f;
+				--md-sys-color-on-tertiary-dark: #283506;
+				--md-sys-color-tertiary-container-dark: #3e4c1b;
+				--md-sys-color-on-tertiary-container-dark: #d8eaa9;
+				--md-sys-color-error-dark: #ffb4ab;
+				--md-sys-color-on-error-dark: #690005;
+				--md-sys-color-error-container-dark: #93000a;
+				--md-sys-color-on-error-container-dark: #ffb4ab;
+				--md-sys-color-background-dark: #201b16;
+				--md-sys-color-on-background-dark: #ebe0d9;
+				--md-sys-color-surface-dark: #201b16;
+				--md-sys-color-on-surface-dark: #ebe0d9;
+				--md-sys-color-surface-variant-dark: #50453a;
+				--md-sys-color-on-surface-variant-dark: #d5c3b5;
+				--md-sys-color-outline-dark: #9d8e81;
+				--md-sys-color-outline-variant-dark: #50453a;
+				--md-sys-color-shadow-dark: #000000;
+				--md-sys-color-scrim-dark: #000000;
+				--md-sys-color-inverse-surface-dark: #ebe0d9;
+				--md-sys-color-inverse-on-surface-dark: #352f2b;
+				--md-sys-color-inverse-primary-dark: #8a5100;
+				--md-sys-color-surface-tint-dark: #ffb86d;
+				--md-sys-color-surface-tint-color-dark: #ffb86d;
+				
+				background: var(--md-sys-color-background);
+				color: var(--md-sys-color-on-background);
+				font-family: 'Google Sans Regular';
+			}
+			a.track_name {
+				text-decoration: none;
+				color: var(--md-sys-color-on-background);
+				font-size: larger;
+				transition: 0.2s;
+			}
+			a.track_name:hover {
+				color: var(--md-sys-color-primary);
+				font-size: x-large;
+				transition: 0.2s;
+			}
+			a.track_name:visited {
+				color: var(--md-sys-color-on-background);
+			}
+			.container {
+				margin-left: 15vw;
+				margin-top: 5vh;
+				margin-right: 15vw;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="margin-top: 10vh; margin-left: 15vw; margin-right: 15vw;">UMSP // {% block h1title %}{% endblock %}</h1>
+		<div class="container">
+			{% block content %}EMPTY BLOCK{% endblock %}
+		</div>        
+	</body>
 </HTML>
